@@ -1,0 +1,13 @@
+ vamos executar o comando 
+ 
+ docker images
+ docker build -t site-hugo .
+ docker images
+
+ Executando um novo container com nossa imagem
+
+ docker run -p 1234:80 -d --name meu-container site-hugo
+
+ Não se esqueça de remover o container com o comando abaixo quando terminar de usar:
+
+docker rm -f meu-container
