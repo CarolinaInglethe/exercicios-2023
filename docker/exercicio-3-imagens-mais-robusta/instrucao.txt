@@ -1,13 +1,36 @@
- vamos executar o comando 
+ vamos executar o comando :
  
  docker images
  docker build -t site-hugo .
  docker images
 
- Executando um novo container com nossa imagem
+ Executando um novo container com nossa imagem :
 
  docker run -p 1234:80 -d --name meu-container site-hugo
 
- Não se esqueça de remover o container com o comando abaixo quando terminar de usar:
+ Não se esqueça de remover o container com o comando abaixo quando terminar 
+ de usar:
 
 docker rm -f meu-container
+
+Construção em múltiplos estágios :
+Cada linha de FROM significa o início de um novo estágio;
+Você pode considerar cada estágio como uma imagem Docker intermediária;
+A última referência de FROM no Dockerfile sempre será a imagem final.
+No primeiro estágio, não precisamos do nginx, pois vamos apenas executar
+ a ferramenta Hugo. Logo, a imagem base escolhida foi a alpine:3.14. 
+ Ao copiar os arquivos necessários e executar o comando, conseguimos nossas 
+ páginas HTML prontas e presentes no caminho /site/public/.
+Após isso, iniciamos um novo estágio, agora com a imagem base nginx:1.21-alpine. 
+Nesse caso, as únicas ações foram copiar as páginas HTML prontas do estágio
+ anterior e deixá-las no caminho que o nginx espera que estejam presentes: 
+ /usr/share/nginx/html.
+
+COMANDOS : 
+docker build -t multi-stage-site-hugo .
+
+
+Veja a diferença de tamanho das imagens! 
+A imagem site-hugo, de apenas um estágio, possui 78.8MB de tamanho, 
+enquanto a nossa nova imagem usando múltiplos estágios, multi-stage-site-hugo,
+ possui apenas 23.4MB.
