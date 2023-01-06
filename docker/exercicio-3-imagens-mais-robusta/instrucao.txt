@@ -34,3 +34,11 @@ Veja a diferença de tamanho das imagens!
 A imagem site-hugo, de apenas um estágio, possui 78.8MB de tamanho, 
 enquanto a nossa nova imagem usando múltiplos estágios, multi-stage-site-hugo,
  possui apenas 23.4MB.
+
+
+
+RUN <comando> <argumento1> <argumento2> <argumentoN>: Indica que o comando dado deve ser executado durante a construção da imagem Docker!
+
+(Obrigatorio) ENTRYPOINT <comando> <argumento1> <argumento2> <argumentoN>: Indica qual é o comando (e seus argumentos) que deve ser executado ao iniciar esta imagem Docker como um container;
+
+CMD <comando> <argumento1> <argumento2> <argumentoN>: Indica qual é o comando (e seus argumentos) que pode ser executado ao iniciar esta imagem Docker como um container;
