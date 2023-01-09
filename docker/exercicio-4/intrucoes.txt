@@ -1,0 +1,2 @@
+faz o build criando imagem com dockerfile;
+cria containers, interagindo conforme a imagem cowsay possibilita;
