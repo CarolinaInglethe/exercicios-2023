@@ -1,0 +1,6 @@
+Chamamos o ato de executar todos os serviços do Compose de subir. Para subir todos os serviços, utilizamos o comando docker-compose up no terminal.
+⚠️ Lembre-se que o arquivo docker-compose.yaml deve estar na mesma pasta da execução deste comando.
+
+docker-compose up -d
+
+A flag -d serve para executarmos todos os serviços no modo segundo plano. Sem esta flag, os logs dos três serviços aparecem no console simultaneamente, dificultando a leitura. Porém, nós podemos ler os logs de cada um dos serviços posteriormente, usando o comando docker-compose logs <nome-do-serviço>.
