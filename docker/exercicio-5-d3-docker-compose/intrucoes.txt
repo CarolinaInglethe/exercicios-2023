@@ -4,3 +4,13 @@ Chamamos o ato de executar todos os serviços do Compose de subir. Para subir to
 docker-compose up -d
 
 A flag -d serve para executarmos todos os serviços no modo segundo plano. Sem esta flag, os logs dos três serviços aparecem no console simultaneamente, dificultando a leitura. Porém, nós podemos ler os logs de cada um dos serviços posteriormente, usando o comando docker-compose logs <nome-do-serviço>.
+
+  -- Reconstruindo a Imagem Docker -- 
+
+É comum fazer várias alterações em nosso código durante a fase de desenvolvimento. Algumas dessas alterações nos obrigam a reconstruir a Imagem Docker, ou seja, precisamos forçar a execução do docker build novamente. 
+
+Por exemplo uma alteração no Dockerfile mudando entrypoint, 
+
+Para isso, utilizamos a flag --build, junto com o comando docker-compose up 
+
+docker-compose up -d --build 
