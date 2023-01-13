@@ -14,3 +14,13 @@ Por exemplo uma alteração no Dockerfile mudando entrypoint,
 Para isso, utilizamos a flag --build, junto com o comando docker-compose up 
 
 docker-compose up -d --build 
+
+DESCENDO TODOS SERVIÇOS :
+docker-compose down 
+
+SUBINDO SERVIÇOS ESPECIFICOS:
+ex : docker-compose up backend
+
+
+ver os logs de nossos serviços de maneira semelhante como fazemos unitariamente com os containers
+ docker-compose logs <nome-do-serviço>
