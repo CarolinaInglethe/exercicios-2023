@@ -24,3 +24,15 @@ ex : docker-compose up backend
 
 ver os logs de nossos serviços de maneira semelhante como fazemos unitariamente com os containers
  docker-compose logs <nome-do-serviço>
+
+
+
+ -- VOLUMES
+
+ Nesta chave, especificamos para o Compose que ele deve criar um volume virtual com o nome dados-do-banco. Porém, ainda precisamos mapear este volume para dentro de algum serviço!
+
+ Isso é feito pela nova chave volumes que está dentro do serviço database! Você pode perceber que esta chave é uma lista com um item e recebeu os dados no seguinte formato: <nome-do-volume>:<caminho-no-container-para-montar>. Ou seja: no serviço database, o caminho /data/db será persistido, mesmo se a gente descer e subir este serviço novamente! 🤩
+
+
+ rodando : sudo docker-compose up -d 
+ Ele cria pasta log , por conta dos volumes indicados no arquivo docker-compose.yaml
