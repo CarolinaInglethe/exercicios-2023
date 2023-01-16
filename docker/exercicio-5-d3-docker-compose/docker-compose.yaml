@@ -25,6 +25,8 @@ services:
   database:
     image: betrybe/docker-compose-example-database:v1
     restart: on-failure
+    volumes:
+      - dados-do-banco:/data/db
 
 volumes:
   dados-do-banco:
